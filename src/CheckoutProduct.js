@@ -29,9 +29,9 @@ function CheckoutProduct({id, image, title,price,rating}) {
                 <strong>{price}</strong>
             </p>
             <div className='checkoutProduct__rating'>
-            {Array((Math.floor(Math.random()*5)+2)).fill().map((_,i) => (
+             {/* {Array((Math.floor(Math.random()*5)+2)).fill().map((_,i) => (
                 <p>⭐</p> 
-          ))}
+          ))}*/ }
             </div>
             <button onClick={removeFromBasket}>Remove from Basket</button>
         </div>

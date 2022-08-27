@@ -1,7 +1,6 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider';
-import { useEffect } from 'react';
 
 function Product({id, title, image, price}) {
 const [{basket}, dispatch] = useStateValue();
@@ -31,11 +30,11 @@ const [{basket}, dispatch] = useStateValue();
                 <strong>{price}</strong>
             </p>
             <div className='product__rating'>
-              {
+            {/*  {
                 Array((Math.floor(Math.random()*5)+1)).fill().map((_,i) => (
                     <p>⭐</p> 
-              ))}
-             
+                ))}
+             */ }
             </div>
             </div>
             
