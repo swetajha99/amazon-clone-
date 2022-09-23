@@ -1,16 +1,10 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider';
-
 function Product({id, title, image, price}) {
-const [{basket}, dispatch] = useStateValue();
-  const [stars, setStars] = useState(1);
+const [{}, dispatch] = useStateValue();
 // console.log("This is the basket>>>", basket);
 
-
-React.useEffect(() => {
-        setStars(Math.floor(Math.random()*5)+1))
-    }, [])
   const addToBasket =()=>{
     //dispatch the item into the data layer
     dispatch({
@@ -23,7 +17,7 @@ React.useEffect(() => {
       }
     });
   };
- 
+  const star = (Math.floor(Math.random()*5)+1);
   return (
     <div className='product'>
         <div className='product__info'>
@@ -33,10 +27,11 @@ React.useEffect(() => {
                 <strong>{price}</strong>
             </p>
             <div className='product__rating'>
+            
               {
-                Array(stars).fill().map((_,i) => (
+                Array(star).fill().map((_,i) => (
                     <p>⭐</p> 
-                ))}
+              ))}
              
             </div>
             </div>
