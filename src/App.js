@@ -7,20 +7,15 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
- 
+    <Header/>
 
     <Routes>
-
-      <Route path='/checkout' >
-      <Header/>
-      <Checkout />
-      </Route>
+    
+      <Route path='/checkout' element={<Checkout />} />
 
 {/* Default route should be at the bottom */}
-      <Route path='/'> 
-      <Header/>
-        <Home/>
-      </Route>
+      <Route path='/'  element={<Home/>} /> 
+    
       </Routes>
     </div>
     </BrowserRouter>
