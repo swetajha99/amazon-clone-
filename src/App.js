@@ -1,17 +1,17 @@
 import './App.css';
 import Header from './Header';
 import Home from './Home';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Checkout from './Checkout';
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
     <div className="App">
  
 
-    <Switch>
+    <Routes>
 
-      <Route path='/checkout'>
+      <Route path='/checkout' >
       <Header/>
       <Checkout />
       </Route>
@@ -21,9 +21,9 @@ function App() {
       <Header/>
         <Home/>
       </Route>
-      </Switch>
+      </Routes>
     </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
