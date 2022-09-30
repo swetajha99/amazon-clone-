@@ -5,13 +5,20 @@ import { useStateValue } from "./StateProvider"
 import { getBasketTotal } from './reducer';
 function Subtotal() {
   const[{basket}, dispatch] = useStateValue();
+  const placeorder =()=>{
+    //dispatch the item into the data layer
+    dispatch({
+      type : 'PLACE_THE_ORDER',
+      
+    });
+  };
   const proceedToCheckout=()=>{
     if(getBasketTotal(basket)<1){
       alert('Your cart is empty')
   }else{
     alert('Your order is placed')
   }
- 
+ placeorder();
 }
   return (
     <div className='subtotal'>
