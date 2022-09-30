@@ -34,7 +34,10 @@ const reducer = (state,action) =>{
                 ...state,
                 basket:newBasket
             }
-            
+        case 'PLACE_THE_ORDER':
+            return {
+                basket:[]
+            }   
             default:
                 return state;
     }
