@@ -1,10 +1,14 @@
 import React from 'react'
 import './Product.css'
+import { useEffect,useState } from 'react';
 import { useStateValue } from './StateProvider';
 function Product({id, title, image, price}) {
 const [{}, dispatch] = useStateValue();
 // console.log("This is the basket>>>", basket);
-
+const [star, setStar] =  useState(4)
+useEffect(() => {
+  setStar(Math.floor(Math.random()*5)+1);
+}, [])
   const addToBasket =()=>{
     //dispatch the item into the data layer
     dispatch({
@@ -17,7 +21,7 @@ const [{}, dispatch] = useStateValue();
       }
     });
   };
-  const star = (Math.floor(Math.random()*5)+1);
+ 
   return (
     <div className='product'>
         <div className='product__info'>
